@@ -1,0 +1,84 @@
+:root {
+  --dot-animation-speed: 2500ms;
+}
+
+.cs {
+  @apply flex;
+  @apply h-screen;
+  @apply w-full;
+  @apply justify-center;
+  @apply items-center;
+  @apply text-2xl;
+}
+
+.csd {
+  @apply flex;
+  @apply flex-row;
+  @apply ml-2;
+}
+
+@keyframes d1 {
+  0%,
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.d1 {
+  opacity: 0;
+  animation: d1 var(--dot-animation-speed) linear infinite;
+}
+
+@keyframes d2 {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.d2 {
+  opacity: 0;
+  animation: d2 var(--dot-animation-speed) linear infinite;
+}
+
+@keyframes d3 {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.d3 {
+  opacity: 0;
+  animation: d3 var(--dot-animation-speed) linear infinite;
+}
