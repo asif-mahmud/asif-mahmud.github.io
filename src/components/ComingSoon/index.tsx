@@ -1,5 +1,5 @@
-import style from "./ComingSoon.module.css";
-import { Helmet } from "react-helmet";
+import style from "./index.module.css";
+import { Helmet } from "react-helmet-async";
 
 export default function ComingSoon() {
   return (

@@ -1,20 +1,13 @@
 :root {
-  --dot-animation-speed: 2500ms;
+  --dots-speed: 2.5s;
 }
 
 .cs {
-  @apply flex;
-  @apply h-screen;
-  @apply w-full;
-  @apply justify-center;
-  @apply items-center;
-  @apply text-2xl;
+  @apply flex h-screen w-full justify-center items-center text-2xl;
 }
 
 .csd {
-  @apply flex;
-  @apply flex-row;
-  @apply ml-2;
+  @apply flex flex-row ml-2;
 }
 
 @keyframes d1 {
@@ -36,7 +29,7 @@
 
 .d1 {
   opacity: 0;
-  animation: d1 var(--dot-animation-speed) linear infinite;
+  animation: d1 var(--dots-speed) linear infinite;
 }
 
 @keyframes d2 {
@@ -58,7 +51,7 @@
 
 .d2 {
   opacity: 0;
-  animation: d2 var(--dot-animation-speed) linear infinite;
+  animation: d2 var(--dots-speed) linear infinite;
 }
 
 @keyframes d3 {
@@ -80,5 +73,5 @@
 
 .d3 {
   opacity: 0;
-  animation: d3 var(--dot-animation-speed) linear infinite;
+  animation: d3 var(--dots-speed) linear infinite;
 }
