@@ -45,10 +45,11 @@ workflows:
   github-page:
     jobs:
       - install-deps
-      - build
-      - publish:
+      - build:
           requires:
             - install-deps
+      - publish:
+          requires:
             - build
           filters:
             branches:
