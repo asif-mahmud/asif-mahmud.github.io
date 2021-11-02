@@ -13,7 +13,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: depedencies-{{ checksum "package.json" }}
+          key: dependencies-{{ checksum "package.json" }}
   build:
     docker:
       - image: node:16.13.0
