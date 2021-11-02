@@ -40,4 +40,10 @@ workflows:
     jobs:
       - install-deps
       - build
-      - publish
+      - publish:
+          requires:
+            - install-deps
+            - build
+          filters:
+            branches:
+              only: master
