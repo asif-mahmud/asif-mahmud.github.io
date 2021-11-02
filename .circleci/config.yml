@@ -1,0 +1,43 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
+
+jobs:
+  install-deps:
+    docker:
+      - image: node:16.13.0
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: yarn install
+  build:
+    docker:
+      - image: node:16.13.0
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: yarn build
+  publish:
+    docker:
+      - image: node:16.13.0
+    steps:
+      - checkout
+      - run:
+          name: Publish
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "ams.eee09@gmail.com"
+            git config user.name "Asif Mahmud Shimon"
+      - run:
+          name: Deploy to github pages
+          command: gh-pages --dist docs
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  github-page:
+    jobs:
+      - install-deps
+      - build
+      - publish
