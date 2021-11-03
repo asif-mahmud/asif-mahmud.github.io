@@ -29,6 +29,10 @@ jobs:
       - run:
           name: Build
           command: yarn build
+      - save_cache:
+          paths:
+            - dist
+          key: dist-{{ checksum "dist" }}
   publish:
     docker:
       - image: node:16.13.0
@@ -44,12 +48,17 @@ jobs:
             npm install -g --silent gh-pages@2.0.1
             git config user.email "ams.eee09@gmail.com"
             git config user.name "Asif Mahmud Shimon"
+      - restore_cache:
+          keys:
+            - dist-{{ checksum "dist" }}
+            # fallback to latest cache
+            - dist-
       - run:
           name: Skip jekyll
-          command: touch docs/.nojekyll
+          command: touch dist/.nojekyll
       - run:
           name: Deploy to github pages
-          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist dist
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
