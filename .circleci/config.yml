@@ -49,17 +49,23 @@ jobs:
           command: touch docs/.nojekyll
       - run:
           name: Deploy to github pages
-          command: gh-pages --dotfiles --dist docs
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   github-page:
     jobs:
-      - install-deps
+      - install-deps:
+          filters:
+            branches:
+              only: master
       - build:
           requires:
             - install-deps
+          filters:
+            branches:
+              only: master
       - publish:
           requires:
             - build
