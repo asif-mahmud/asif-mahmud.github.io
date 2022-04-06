@@ -32,7 +32,7 @@ jobs:
       - save_cache:
           paths:
             - dist
-          key: dist-{{ epoch }}
+          key: dist-{{ .Revision }}
   publish:
     docker:
       - image: node:16.13.0
@@ -50,7 +50,7 @@ jobs:
             git config user.name "Asif Mahmud Shimon"
       - restore_cache:
           keys:
-            - dist-{{ checksum "package.json" }}
+            - dist-{{ .Revision }}
             # fallback to latest cache
             - dist-
       - run:
