@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>IPv4</h1>
+    <p id="placeholder"></p>
+    <h1>IPv6</h1>
+    <p id="placeholder2"></p>
+
+    <script>
+        let el = document.getElementById("placeholder");
+        let el2 = document.getElementById("placeholder2");
+        axios.get("http://169.254.169.254/latest/meta-data/")
+        .then(function(data) {            
+            el.innerHTML = data.data;
+        })
+        .catch(function(e){
+            el.innerHTML = e;
+        });
+        axios.get("http://[fd00:ec2::254]/latest/meta-data/")
+        .then(function(data) {            
+            el.innerHTML = data.data;
+        })
+        .catch(function(e){
+            el.innerHTML = e;
+        });
+    </script>
+</body>
+</html>
