@@ -7,7 +7,7 @@
 
     <script>
       let el = document.getElementById("placeholder");
-      el.innerHTML = "<div>"+ JSON.stringify(document.cookie) +"</div>";
+      el.innerHTML = "<div>"+ (window.webdriver ? "Webdriver found" : "Webdriver not found") +"</div>";
     </script>
   </body>
 </html>
