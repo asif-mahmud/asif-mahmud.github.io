@@ -1,8 +1,8 @@
-import {lazy, Suspense} from "react";
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
-import PageLoading from "./components/PageLoading";
+// import PageLoading from "./components/PageLoading";
 
-const LazyComingSoon = lazy(() => import("./components/ComingSoon"));
+const LazyComingSoon = lazy(() => import("./features/loaders/coming-soon"));
 
 export default function App() {
   return (
@@ -10,8 +10,8 @@ export default function App() {
       <Helmet>
         <title>Shimon's site | Coming soon</title>
       </Helmet>
-      <Suspense fallback={<PageLoading />}>
-        <LazyComingSoon/>
+      <Suspense fallback={<p>Loading ...</p>}>
+        <LazyComingSoon />
       </Suspense>
     </>
   );
