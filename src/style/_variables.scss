@@ -1,1 +1,18 @@
 $font-size: 1rem !default;
+$navbar-height: 70px !default;
+
+// theme
+$theme: (
+  "light": (
+    "background": #ffffff,
+    "foreground": #0d070a,
+    "primary": #64024c,
+    "secondary": #dd0369,
+  ),
+  "dark": (
+    "background": #0d070a,
+    "foreground": #ffffff,
+    "primary": #64024c,
+    "secondary": #dd0369,
+  ),
+);

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $rect-stroke-width: 2;
 $rect-speed: 8s;
 $inner-rect-speed: $rect-speed * 0.8;
@@ -25,7 +27,7 @@ $bottom-left-box-y: $bottom-right-box-y;
   }
 
   rect:nth-child(n + 2) {
-    stroke-width: $rect-stroke-width/2;
+    stroke-width: math.div($rect-stroke-width, 2);
   }
 
   rect:nth-child(2) {

@@ -1,7 +1,12 @@
 // Main stylesheet file
-@import "fonts";
 @import "variables";
+@import "functions";
+
+@import "fonts";
 @import "body";
+@import "root";
 
 @import "coming-soon";
 @import "rotating-squares";
+@import "topbar";
+@import "theme-switch";

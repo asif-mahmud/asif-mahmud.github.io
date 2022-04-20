@@ -1,0 +1,11 @@
+.topbar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  height: $navbar-height;
+  width: 100%;
+  top: 0;
+
+  background-color: purple;
+  box-shadow: 2px 0px 5px 2px rgba(0, 0, 0, 0.3);
+}
