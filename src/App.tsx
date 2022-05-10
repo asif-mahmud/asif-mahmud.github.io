@@ -18,7 +18,7 @@ export default function App() {
         {/* <Suspense fallback={<p>Loading ...</p>}>
           <LazyComingSoon />
         </Suspense> */}
-        <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%"}}>
           <div style={{width: "100px", height: "100px"}}>
 
         <RotatingSquares />
