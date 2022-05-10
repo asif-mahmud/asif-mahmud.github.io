@@ -1,6 +1,7 @@
 import { TopBar } from "features/navigation";
 import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
+import {RotatingSquares} from "features/loaders"
 
 const LazyComingSoon = lazy(() => import("./features/loaders/coming-soon"));
 
@@ -14,9 +15,10 @@ export default function App() {
       <TopBar />
 
       <main>
-        <Suspense fallback={<p>Loading ...</p>}>
+        {/* <Suspense fallback={<p>Loading ...</p>}>
           <LazyComingSoon />
-        </Suspense>
+        </Suspense> */}
+        <RotatingSquares />
       </main>
     </>
   );
