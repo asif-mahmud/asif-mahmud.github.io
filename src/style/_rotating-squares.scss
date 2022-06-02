@@ -1,49 +1,53 @@
 @use "sass:math";
 
-$rect-stroke-width: 2;
-$rect-speed: 8s;
-$inner-rect-speed: $rect-speed * 0.8;
+$rotating-squares-rect-stroke-width: 2;
+$rotating-squares-rect-speed: 8s;
+$rotating-squares-inner-rect-speed: $rotating-squares-rect-speed * 0.8;
 
-$outer-box-width: 50;
-$inner-box-width: 16;
-$box-gutter: 5;
-$box-stroke-width: 2;
-$top-left-box-x: $box-stroke-width + $box-gutter;
-$top-left-box-y: $box-stroke-width + $box-gutter;
-$top-right-box-x: $top-left-box-x + $inner-box-width + $box-gutter;
-$top-right-box-y: $top-left-box-y;
-$bottom-right-box-x: $top-right-box-x;
-$bottom-right-box-y: $top-left-box-y + $inner-box-width + $box-gutter;
-$bottom-left-box-x: $top-left-box-x;
-$bottom-left-box-y: $bottom-right-box-y;
+$rotating-squares-outer-box-width: 50;
+$rotating-squares-inner-box-width: 16;
+$rotating-squares-box-gutter: 5;
+$rotating-squares-box-stroke-width: 2;
+$rotating-squares-top-left-box-x: $rotating-squares-box-stroke-width +
+  $rotating-squares-box-gutter;
+$rotating-squares-top-left-box-y: $rotating-squares-box-stroke-width +
+  $rotating-squares-box-gutter;
+$rotating-squares-top-right-box-x: $rotating-squares-top-left-box-x +
+  $rotating-squares-inner-box-width + $rotating-squares-box-gutter;
+$rotating-squares-top-right-box-y: $rotating-squares-top-left-box-y;
+$rotating-squares-bottom-right-box-x: $rotating-squares-top-right-box-x;
+$rotating-squares-bottom-right-box-y: $rotating-squares-top-left-box-y +
+  $rotating-squares-inner-box-width + $rotating-squares-box-gutter;
+$rotating-squares-bottom-left-box-x: $rotating-squares-top-left-box-x;
+$rotating-squares-bottom-left-box-y: $rotating-squares-bottom-right-box-y;
 
 .rotating-squares {
-  animation: b1 $rect-speed ease-in-out infinite;
+  animation: b1 $rotating-squares-rect-speed ease-in-out infinite;
 
   rect {
     fill: none;
-    stroke-width: $rect-stroke-width;
+    stroke-width: $rotating-squares-rect-stroke-width;
     stroke: black;
   }
 
   rect:nth-child(n + 2) {
-    stroke-width: math.div($rect-stroke-width, 2);
+    stroke-width: math.div($rotating-squares-rect-stroke-width, 2);
   }
 
   rect:nth-child(2) {
-    animation: b2 $inner-rect-speed ease-out infinite;
+    animation: b2 $rotating-squares-inner-rect-speed ease-out infinite;
   }
 
   rect:nth-child(3) {
-    animation: b3 $inner-rect-speed ease-out infinite;
+    animation: b3 $rotating-squares-inner-rect-speed ease-out infinite;
   }
 
   rect:nth-child(4) {
-    animation: b4 $inner-rect-speed ease-out infinite;
+    animation: b4 $rotating-squares-inner-rect-speed ease-out infinite;
   }
 
   rect:nth-child(5) {
-    animation: b5 $inner-rect-speed ease-out infinite;
+    animation: b5 $rotating-squares-inner-rect-speed ease-out infinite;
   }
 }
 
@@ -74,97 +78,97 @@ $bottom-left-box-y: $bottom-right-box-y;
 
 @keyframes b2 {
   0% {
-    x: $top-left-box-x;
-    y: $top-left-box-y;
+    x: $rotating-squares-top-left-box-x;
+    y: $rotating-squares-top-left-box-y;
   }
   8.33% {
-    x: $top-right-box-x;
-    y: $top-right-box-y;
+    x: $rotating-squares-top-right-box-x;
+    y: $rotating-squares-top-right-box-y;
   }
   16.66% {
-    x: $bottom-right-box-x;
-    y: $bottom-right-box-y;
+    x: $rotating-squares-bottom-right-box-x;
+    y: $rotating-squares-bottom-right-box-y;
   }
   24.99%,
   58.31% {
-    x: $bottom-left-box-x;
-    y: $bottom-left-box-y;
+    x: $rotating-squares-bottom-left-box-x;
+    y: $rotating-squares-bottom-left-box-y;
   }
   66.64% {
-    x: $top-left-box-x;
-    y: $top-left-box-y;
+    x: $rotating-squares-top-left-box-x;
+    y: $rotating-squares-top-left-box-y;
   }
 }
 
 @keyframes b3 {
   0%,
   24.99% {
-    x: $top-right-box-x;
-    y: $top-right-box-y;
+    x: $rotating-squares-top-right-box-x;
+    y: $rotating-squares-top-right-box-y;
   }
   33.32% {
-    x: $bottom-right-box-x;
-    y: $bottom-right-box-y;
+    x: $rotating-squares-bottom-right-box-x;
+    y: $rotating-squares-bottom-right-box-y;
   }
   41.65%,
   58.31% {
-    x: $bottom-left-box-x;
-    y: $bottom-left-box-y;
+    x: $rotating-squares-bottom-left-box-x;
+    y: $rotating-squares-bottom-left-box-y;
   }
   66.64% {
-    x: $top-left-box-x;
-    y: $top-left-box-y;
+    x: $rotating-squares-top-left-box-x;
+    y: $rotating-squares-top-left-box-y;
   }
   74.97% {
-    x: $top-right-box-x;
-    y: $top-right-box-y;
+    x: $rotating-squares-top-right-box-x;
+    y: $rotating-squares-top-right-box-y;
   }
 }
 
 @keyframes b4 {
   0%,
   41.65% {
-    x: $bottom-right-box-x;
-    y: $bottom-right-box-y;
+    x: $rotating-squares-bottom-right-box-x;
+    y: $rotating-squares-bottom-right-box-y;
   }
   49.98%,
   58.31% {
-    x: $bottom-left-box-x;
-    y: $bottom-left-box-y;
+    x: $rotating-squares-bottom-left-box-x;
+    y: $rotating-squares-bottom-left-box-y;
   }
   66.64% {
-    x: $top-left-box-x;
-    y: $top-left-box-y;
+    x: $rotating-squares-top-left-box-x;
+    y: $rotating-squares-top-left-box-y;
   }
   74.97% {
-    x: $top-right-box-x;
-    y: $top-right-box-y;
+    x: $rotating-squares-top-right-box-x;
+    y: $rotating-squares-top-right-box-y;
   }
   83.3% {
-    x: $bottom-right-box-x;
-    y: $bottom-right-box-y;
+    x: $rotating-squares-bottom-right-box-x;
+    y: $rotating-squares-bottom-right-box-y;
   }
 }
 @keyframes b5 {
   0%,
   58.31% {
-    x: $bottom-left-box-x;
-    y: $bottom-left-box-y;
+    x: $rotating-squares-bottom-left-box-x;
+    y: $rotating-squares-bottom-left-box-y;
   }
   66.64% {
-    x: $top-left-box-x;
-    y: $top-left-box-y;
+    x: $rotating-squares-top-left-box-x;
+    y: $rotating-squares-top-left-box-y;
   }
   74.97% {
-    x: $top-right-box-x;
-    y: $top-right-box-y;
+    x: $rotating-squares-top-right-box-x;
+    y: $rotating-squares-top-right-box-y;
   }
   83.3% {
-    x: $bottom-right-box-x;
-    y: $bottom-right-box-y;
+    x: $rotating-squares-bottom-right-box-x;
+    y: $rotating-squares-bottom-right-box-y;
   }
   91.63% {
-    x: $bottom-left-box-x;
-    y: $bottom-left-box-y;
+    x: $rotating-squares-bottom-left-box-x;
+    y: $rotating-squares-bottom-left-box-y;
   }
 }
