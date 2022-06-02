@@ -47,6 +47,22 @@ $bottom-left-box-y: $bottom-right-box-y;
   }
 }
 
+.light {
+  .rotating-squares {
+    rect {
+      stroke: theme-color("light", "foreground");
+    }
+  }
+}
+
+.dark {
+  .rotating-squares {
+    rect {
+      stroke: theme-color("dark", "foreground");
+    }
+  }
+}
+
 @keyframes b1 {
   0% {
     transform: rotateZ(0deg);
