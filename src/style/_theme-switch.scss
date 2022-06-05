@@ -2,7 +2,7 @@
 
 $theme-switch-fill-color: color.adjust(
   theme-color("dark", "foreground"),
-  $lightness: -30
+  $lightness: -30%
 );
 $theme-switch-icon-size: 2.5rem;
 
@@ -34,7 +34,7 @@ $theme-switch-icon-size: 2.5rem;
     svg {
       path,
       circle {
-        fill: color.adjust($theme-switch-fill-color, $lightness: 100);
+        fill: color.adjust($theme-switch-fill-color, $lightness: 100%);
       }
     }
   }
