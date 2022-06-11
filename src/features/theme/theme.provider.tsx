@@ -1,4 +1,10 @@
-import { createContext, FC, useEffect, useReducer } from "react";
+import {
+  createContext,
+  FC,
+  PropsWithChildren,
+  useEffect,
+  useReducer,
+} from "react";
 import ThemeReducer from "./theme.reducer";
 import {
   Theme,
@@ -19,7 +25,7 @@ const initialContextValue: ThemeContextType = {
 
 export const ThemeContext = createContext(initialContextValue);
 
-const ThemeProvider: FC<{}> = ({ children }) => {
+const ThemeProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
   const [state, dispatch] = useReducer(ThemeReducer, initialState);
 
   const switchTheme = () => {
