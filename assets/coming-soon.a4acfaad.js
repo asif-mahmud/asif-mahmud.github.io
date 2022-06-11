@@ -1,1 +1,0 @@
-import{j as i,F as o,a as n,W as s}from"./index.912279b5.js";function r(){return i(o,{children:[n(s,{children:n("title",{children:"Asif Mahmud Shimon | Coming Soon"})}),n("div",{className:"coming-soon",children:i("p",{children:["Coming soon",n("span",{children:"."}),n("span",{children:"."}),n("span",{children:"."})]})})]})}export{r as default};
