@@ -18,6 +18,8 @@ main {
   flex: 1 0;
   height: 100%;
   margin-top: $navbar-height;
+  width: 100%;
+  max-width: $max-content-width;
 }
 
 .light {

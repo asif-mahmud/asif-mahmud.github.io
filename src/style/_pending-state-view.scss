@@ -1,0 +1,25 @@
+@use "sass:color";
+
+.pending-state-view {
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - $navbar-height);
+  top: $navbar-height;
+  left: 0;
+  z-index: $navbar-z-index;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light {
+  .pending-state-view {
+    background: color.adjust(theme-color("light", "foreground"), $alpha: -0.75);
+  }
+}
+
+.dark {
+  .pending-state-view {
+    background: color.adjust(theme-color("dark", "foreground"), $alpha: -0.75);
+  }
+}

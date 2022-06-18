@@ -9,7 +9,7 @@ export default function Suspense({
       <RotatingSquares />
     </div>
   ),
-  delayMS = 2000,
+  delayMS = 500,
 }: {
   children: () => Promise<any>;
   fallback?: () => JSX.Element;
@@ -23,7 +23,6 @@ export default function Suspense({
   useMemo(async () => {
     if (children) {
       const child = await children();
-      /* console.log({ child, default: child.default }); */
       setChild(child.default);
       setOut(true);
     }

@@ -1,0 +1,41 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 15rem;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      display: flex;
+      padding: 1rem 2rem;
+      text-decoration: none;
+    }
+  }
+}
+
+.light {
+  .home {
+    a {
+      color: theme-color("light", "foreground");
+    }
+  }
+}
+
+.dark {
+  .home {
+    a {
+      color: theme-color("dark", "foreground");
+    }
+  }
+}

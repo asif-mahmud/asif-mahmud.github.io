@@ -1,8 +1,5 @@
-import { Suspense } from "features/loaders";
-import { TopBar } from "features/navigation";
+import { Main } from "features/routing";
 import { Helmet } from "react-helmet-async";
-
-const LazyComingSoon = async () => import("./features/loaders/coming-soon");
 
 export default function App() {
   return (
@@ -11,11 +8,7 @@ export default function App() {
         <title>Shimon's site | Coming soon</title>
       </Helmet>
 
-      <TopBar />
-
-      <main>
-        <Suspense>{LazyComingSoon}</Suspense>
-      </main>
+      <Main />
     </>
   );
 }

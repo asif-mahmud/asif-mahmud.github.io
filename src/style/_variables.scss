@@ -1,6 +1,7 @@
 $font-size: 1rem !default;
 $navbar-height: 70px !default;
-$navbar-z-index: 1000;
+$navbar-z-index: 1000 !default;
+$max-content-width: 1024px !default;
 
 // theme
 $theme: (

@@ -15,6 +15,14 @@ $theme-switch-icon-size: 2.5rem;
   padding: 0 1rem;
   margin-left: auto;
 
+  &:hover {
+    background-color: color.adjust(
+      theme-color("light", "primary"),
+      $lightness: -10%,
+      $alpha: -0.3
+    );
+  }
+
   div {
     // this makes it only usable on navbar
     // whose height is enough to accommodate it
@@ -24,7 +32,7 @@ $theme-switch-icon-size: 2.5rem;
     svg {
       path,
       circle {
-        transition: all 0.2s linear;
+        transition: all 0.3s linear;
         fill: $theme-switch-fill-color;
       }
     }
