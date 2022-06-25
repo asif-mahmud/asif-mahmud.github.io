@@ -1,0 +1,28 @@
+.link-list {
+  li {
+    list-style-type: decimal;
+    margin-top: 0.7rem;
+  }
+  a {
+    text-decoration: none;
+    text-underline-offset: 0.3rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.light {
+  a {
+    color: theme-color("light", "foreground");
+  }
+}
+
+.dark {
+  a {
+    color: theme-color("dark", "foreground");
+  }
+}

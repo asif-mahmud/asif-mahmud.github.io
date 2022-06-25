@@ -1,0 +1,49 @@
+@use "sass:color";
+
+.code {
+  position: relative;
+  padding: 1rem;
+  div {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: color.adjust(
+      theme-color("light", "background"),
+      $alpha: -0.2
+    );
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    div {
+      display: block;
+    }
+  }
+}
+
+.light {
+  .code {
+    color: theme-color("light", "foreground");
+    border: 1px solid theme-color("light", "foreground");
+    background-color: color.adjust(
+      theme-color("light", "secondary"),
+      $lightness: 45%,
+      $alpha: -0.5
+    );
+  }
+}
+
+.dark {
+  .code {
+    color: theme-color("dark", "background");
+    border: 1px solid theme-color("dark", "foreground");
+    background-color: color.adjust(
+      theme-color("dark", "secondary"),
+      $lightness: 85%,
+      $alpha: -0.3
+    );
+  }
+}
