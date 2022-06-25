@@ -4,7 +4,7 @@ import {
   ReactLocation,
   Router,
 } from "@tanstack/react-location";
-import { TopBar } from "features/navigation";
+import { Drawer, TopBar } from "features/navigation";
 import PendingStateView from "./pending-state-view";
 import routes, { LocationGenerics } from "./routes";
 
@@ -24,6 +24,7 @@ export default function Main() {
       defaultPendingElement={<PendingStateView />}
     >
       <TopBar />
+      <Drawer />
       <main>
         <Outlet />
       </main>

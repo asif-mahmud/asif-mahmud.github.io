@@ -1,30 +1,20 @@
+import { Burger } from "features/icons";
 import { ThemeSwitch } from "features/theme";
-import { Link } from "@tanstack/react-location";
+import PageLinks from "./page-links";
+import useDrawer from "./use-drawer";
 
 export default function TopBar() {
+  const { toggle } = useDrawer();
+
   return (
     <nav className="topbar">
       <div className="topbar-content-wrapper">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <a
-          href="https://github.com/asif-mahmud"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Github
-        </a>
-        <a
-          href="https://gitlab.com/gSwag/emacs-configuration"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Emacs config
-        </a>
-        <Link to="/devnotes">Dev notes</Link>
-        <Link to="/exploits">Exploits</Link>
+        <PageLinks />
 
         <ThemeSwitch />
+        <button className="burger-menu" onClick={toggle}>
+          <Burger />
+        </button>
       </div>
     </nav>
   );

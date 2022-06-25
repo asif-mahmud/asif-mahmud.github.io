@@ -2,6 +2,8 @@ $font-size: 1rem !default;
 $navbar-height: 70px !default;
 $navbar-z-index: 1000 !default;
 $max-content-width: 1024px !default;
+$breakpoint-desktop: 768px !default; // greater than this is desktop
+$breakpoint-tablet: 425px !default; // greater than this is tablet
 
 // theme
 $theme: (

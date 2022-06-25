@@ -1,0 +1,110 @@
+@use "sass:color";
+
+.drawer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: $navbar-z-index + 100;
+  right: -100%;
+  // transition: right 0.3s linear;
+  // https://cubic-bezier.com/
+  transition: right 0.3s cubic-bezier(0, -0.01, 1, 0.48);
+
+  &.opened {
+    right: 0;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .close-button {
+      width: fit-content;
+      height: $navbar-height;
+      display: flex;
+      justify-content: end;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      svg {
+        width: $navbar-height * 0.5;
+        height: $navbar-height * 0.5;
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: end;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      width: 100%;
+      text-decoration: none;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.light {
+  .drawer {
+    background-color: theme-color("light", "background");
+
+    .close-button {
+      svg {
+        line {
+          stroke: theme-color("light", "foreground");
+        }
+      }
+    }
+
+    nav {
+      a {
+        color: theme-color("light", "foreground");
+
+        &:hover,
+        &:active,
+        &.active {
+          color: theme-color("light", "primary");
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.dark {
+  .drawer {
+    background-color: theme-color("dark", "background");
+
+    .close-button {
+      svg {
+        line {
+          stroke: theme-color("dark", "foreground");
+        }
+      }
+    }
+
+    nav {
+      a {
+        color: theme-color("dark", "foreground");
+
+        &:hover,
+        &:active,
+        &.active {
+          color: color.adjust(theme-color("dark", "primary"), $lightness: 30%);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

@@ -13,7 +13,8 @@ $theme-switch-icon-size: 2.5rem;
   justify-content: center;
   cursor: pointer;
   padding: 0 1rem;
-  margin-left: auto;
+  margin-left: 0;
+  margin-right: auto;
 
   &:hover {
     background-color: color.adjust(
@@ -21,6 +22,11 @@ $theme-switch-icon-size: 2.5rem;
       $lightness: -10%,
       $alpha: -0.3
     );
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    margin-right: 0;
+    margin-left: auto;
   }
 
   div {

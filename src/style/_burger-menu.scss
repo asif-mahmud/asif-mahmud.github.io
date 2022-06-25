@@ -1,0 +1,35 @@
+@use "sass:color";
+
+$burger-menu-width: $navbar-height;
+
+.burger-menu {
+  width: $burger-menu-width;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: theme-color("light", "primary");
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+
+  @media screen and (max-width: $breakpoint-desktop) {
+    display: flex;
+  }
+
+  svg {
+    width: 50%;
+    height: auto;
+    line {
+      stroke: theme-color("light", "background");
+    }
+  }
+
+  &:hover {
+    background-color: color.adjust(
+      theme-color("light", "primary"),
+      $lightness: -10%,
+      $alpha: -0.3
+    );
+  }
+}
