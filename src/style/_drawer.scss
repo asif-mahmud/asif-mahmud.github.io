@@ -9,6 +9,8 @@
   // transition: right 0.3s linear;
   // https://cubic-bezier.com/
   transition: right 0.3s cubic-bezier(0, -0.01, 1, 0.48);
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   &.opened {
     right: 0;
@@ -21,8 +23,6 @@
     justify-content: start;
     padding-right: 2rem;
     padding-top: 1rem;
-    overflow-x: hidden;
-    overflow-y: auto;
 
     .close-button {
       width: fit-content;

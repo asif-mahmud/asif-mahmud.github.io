@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-location";
+import { RouterLink } from "features/navigation";
 
 const Links = [
   "setup-database-server-client-using-docker",
@@ -23,10 +24,13 @@ export default function DevNotes() {
         <ul className="link-list">
           {Links.map((link) => (
             <li key={link}>
-              <Link to={`${link}`}>
-                {link.charAt(0).toUpperCase() +
-                  link.substring(1).replaceAll("-", " ").toLowerCase()}
-              </Link>
+              <RouterLink
+                to={`/devnotes/${link}`}
+                label={
+                  link.charAt(0).toUpperCase() +
+                  link.substring(1).replaceAll("-", " ").toLowerCase()
+                }
+              />
             </li>
           ))}
         </ul>

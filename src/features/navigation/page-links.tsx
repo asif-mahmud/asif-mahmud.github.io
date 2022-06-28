@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-location";
+import RouterLink from "./router-link";
 
 export default function PageLinks() {
   return (
     <>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <RouterLink to="/" label="Home" />
+      <RouterLink to="/about" label="About" />
       <a
         href="https://github.com/asif-mahmud"
         target="_blank"
@@ -19,8 +19,8 @@ export default function PageLinks() {
       >
         Emacs config
       </a>
-      <Link to="/devnotes">Dev notes</Link>
-      <Link to="/exploits">Exploits</Link>
+      <RouterLink to="/devnotes" label="Dev notes" />
+      <RouterLink to="/exploits" label="Exploits" />
     </>
   );
 }

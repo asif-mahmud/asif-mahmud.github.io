@@ -1,7 +1,7 @@
 import { PageLinks } from "features/navigation";
 import { Helmet } from "react-helmet-async";
 
-import MeJPG from "../../../public/images/me.jpg";
+import MeJPG from "images/me.jpg";
 
 export default function Home() {
   return (
