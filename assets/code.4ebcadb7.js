@@ -1,1 +1,0 @@
-import{j as c,a}from"./index.d5492921.js";const e=({children:o})=>c("div",{className:"code",onClick:()=>{window.navigator.clipboard.writeText(o)},children:[a("div",{children:"Click to copy"}),a("code",{children:o})]});var d=e;export{d as C};
