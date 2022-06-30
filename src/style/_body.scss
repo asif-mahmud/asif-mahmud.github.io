@@ -12,6 +12,10 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
+* {
+  overflow-wrap: break-word;
+}
+
 main {
   display: flex;
   flex-direction: column;
