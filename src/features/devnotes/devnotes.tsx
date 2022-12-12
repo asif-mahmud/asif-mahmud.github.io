@@ -1,9 +1,9 @@
-import { Link } from "@tanstack/react-location";
 import { RouterLink } from "features/navigation";
 
 const Links = [
   "setup-database-server-client-using-docker",
   "setup-headless-chrome-service-using-docker",
+  "monorepo-with-npm-workspaces-and-turborepo",
 ];
 
 export default function DevNotes() {
