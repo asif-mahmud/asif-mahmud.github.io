@@ -26,7 +26,7 @@ export default function MonoRepoWithNPMWorkspaceAndTurborepo() {
         </p>
         <Code>npm i -D turbo</Code>
         <p>
-          Create one or more folders to add projects (here <pre>packages</pre>
+          Create one or more folders to add projects (here <b>packages</b>{" "}
           folder) in-
         </p>
         <Code>mkdir -pv packages</Code>
@@ -37,7 +37,7 @@ export default function MonoRepoWithNPMWorkspaceAndTurborepo() {
         </p>
         <Code>"workspaces": ["packages/*"]</Code>
         <p>
-          Create a turborepo config file. Sample can be found
+          Create a turborepo config file. Sample can be found{" "}
           <a href="https://turbo.build/repo/docs/getting-started/existing-monorepo#create-a-pipeline">
             here
           </a>
@@ -57,7 +57,7 @@ export default function MonoRepoWithNPMWorkspaceAndTurborepo() {
       <section>
         <h2>Package management</h2>
         <p>
-          To add/remove packages to a workspace add <pre>-w new-project</pre>
+          To add/remove packages to a workspace add <code>-w new-project</code>
           with each npm install/uninstall command. Replace <i>
             new-project
           </i>{" "}
@@ -68,9 +68,9 @@ export default function MonoRepoWithNPMWorkspaceAndTurborepo() {
         <h2>npx</h2>
         <p>
           Good news is <b>npx</b> command also respects{" "}
-          <pre>-w new-project</pre>
+          <code>-w new-project</code>
           flag. So you can run commands inside a project folder without actually
-          moving into that project folder. <pre>npx</pre> will take care of
+          moving into that project folder. <code>npx</code> will take care of
           current path.
         </p>
       </section>
@@ -78,11 +78,11 @@ export default function MonoRepoWithNPMWorkspaceAndTurborepo() {
         <h2>Adding turbo commands to scripts option</h2>
         <p>You can run turbo's commands/pipelines like this-</p>
         <Code>npx turbo build</Code>
-        <pre>build</pre> being the command/pipeline of turbo.
+        <code>build</code> being the command/pipeline of turbo.
         <p>
-          Another way is to add <pre>turbo build</pre> or similar commands at
-          the <pre>scripts</pre> options of <pre>package.json</pre> file and run
-          them with <pre>npm run build</pre> type commands.
+          Another way is to add <code>turbo build</code> or similar commands at
+          the <b>scripts</b> options of <b>package.json</b> file and run them
+          with <code>npm run build</code> type commands.
         </p>
       </section>
     </>
