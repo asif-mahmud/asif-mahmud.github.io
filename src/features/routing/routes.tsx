@@ -36,7 +36,7 @@ const routes: Route<LocationGenerics>[] = [
           ).then((mod) => <mod.default />),
       },
       {
-        path: "/setup-headless-chrome-service-using-docker",
+        path: "/monorepo-with-npm-workspaces-and-turborepo",
         element: () =>
           import(
             "features/devnotes/pages/monorepo-with-npm-workspaces-and-turborepo"
