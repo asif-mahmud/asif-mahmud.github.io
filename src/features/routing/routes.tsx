@@ -35,6 +35,13 @@ const routes: Route<LocationGenerics>[] = [
             "features/devnotes/pages/setup-headless-chrome-service-using-docker"
           ).then((mod) => <mod.default />),
       },
+      {
+        path: "/setup-headless-chrome-service-using-docker",
+        element: () =>
+          import(
+            "features/devnotes/pages/monorepo-with-npm-workspaces-and-turborepo"
+          ).then((mod) => <mod.default />),
+      },
     ],
   },
 ];
