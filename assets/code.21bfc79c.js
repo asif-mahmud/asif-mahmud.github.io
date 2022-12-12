@@ -1,1 +1,0 @@
-import{r,j as s,a as e}from"./index.e95bb99a.js";const c=({children:o})=>{const[t,a]=r.exports.useState(!1);return s("div",{className:"code",onClick:()=>{window.navigator.clipboard.writeText(o),a(!0)},children:[e("div",{children:t?"Copied!":"Click to copy"}),e("code",{children:o})]})};var p=c;export{p as C};
